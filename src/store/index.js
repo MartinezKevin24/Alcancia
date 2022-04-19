@@ -6,7 +6,7 @@ import storage from 'redux-persist/lib/storage'
 import reducer from "./reducer";
 
 const persistConfig = {
-    key: 'persist-k',
+    key: 'per-k',
     storage,
 }
 

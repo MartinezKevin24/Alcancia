@@ -1,10 +1,10 @@
 import Bank from "./Bank";
 import {useState} from "react";
-import {useSelector, useDispatch} from "react-redux";
+import {useDispatch} from "react-redux";
 import "../estilos/insert.css";
 import {insertCoin, resetPiggy} from "../store/actions";
 
-export default function Insert(){
+export default function Insert({change}){
 
     const dispatch = useDispatch();
 
@@ -25,8 +25,12 @@ export default function Insert(){
         const quantitys = parseInt(quantity);
 
         setPrice(coins*quantitys);
-
         dispatch(insertCoin( {[coin]: quantitys}))
+
+        setTimeout(()=>{
+            setPrice(0);
+        },[1100])
+
     }
 
     const reset = () => {
@@ -34,7 +38,11 @@ export default function Insert(){
     }
 
     return(
-        <div>
+        <div className="container-insert-inside">
+            <div className="container-menu" onClick={()=>{change()}}>
+                <span>Menú ></span>
+            </div>
+            <h1 className="title">Alcancia Piggy</h1>
             <div className="container-banks">
                 <Bank price={price}/>
             </div>

@@ -1,0 +1,61 @@
+.container-added{
+    display: flex;
+    justify-content: center;
+}
+
+.added{
+    font-family: "Roboto Mono";
+    font-weight: 600;
+    position: absolute;
+    font-size: 30px;
+    color: forestgreen;
+    transform: translate(0, 20px);
+    visibility: hidden;
+    animation: add .6s ease-in-out;
+    animation-delay: .5s;
+}
+
+#piggy{
+    height: 520px;
+}
+
+@media screen and (max-width: 690px) {
+    #piggy{
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container-added{
+        margin-top: 5rem;
+    }
+    .added{
+        font-size: 16px;
+    }
+    #piggy{
+        height: 150px;
+    }
+}
+
+@keyframes add {
+    0%{
+        transform: translate(0, 20px);
+        visibility: visible;
+    }100%{
+        transform: translate(0, 0px);
+    }
+}
+
+#coin{
+    visibility: hidden;
+    animation: move-coin .5s ease-in-out;
+}
+
+@keyframes move-coin {
+    0%{
+        transform: translate(0, 30px);
+        visibility: visible;
+    }100%{
+        transform: translate(0, 180px);
+    }
+}
