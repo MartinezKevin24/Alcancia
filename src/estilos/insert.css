@@ -1,0 +1,93 @@
+.container-form > div{
+    display: grid;
+    grid-template:
+    "quantity type button" 4rem
+    "reset reset reset" 4rem
+    /1fr 1fr 1fr;
+    margin: 3rem 0;
+    grid-row-gap: .7rem;
+}
+
+.quantity{
+    grid-area: quantity;
+}
+
+.type-coin{
+    grid-area: type;
+}
+
+.quantity, .type-coin{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    width: 80%;
+    justify-self: center;
+    align-self: center;
+}
+
+.button-reset{
+    grid-area: reset;
+    background: #9f4b58;
+    width: 94%;
+}
+
+.button-add{
+    grid-area: button;
+    background: #4b879f;
+    width: 80%;
+}
+
+.button-add, .button-reset{
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.button-reset:hover{
+    background: #e77f8d;
+}
+
+.button-add:hover{
+    background: #a9dcfa;
+}
+
+.button-reset:hover, .button-add:hover{
+    transition: ease-in 200ms;
+    color: #282c34;
+}
+
+select, input{
+    height: 2rem;
+}
+
+@media screen and (max-width: 660px) {
+    .container-form > div{
+        grid-template:
+        "quantity type" 4rem
+        "button button" 4rem
+        "reset reset" 4rem
+        /1fr 1fr;
+    }
+
+    .button-add, .button-reset{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .container-form > div{
+        grid-template:
+        "quantity" 4rem
+        "type" 4rem
+        "button" 4rem
+        "reset" 4rem
+        /1fr;
+    }
+}
