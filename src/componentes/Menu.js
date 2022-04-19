@@ -15,7 +15,8 @@ export default function Menu({change}){
     const [countTotal, setCountTotal] = useState(0);
 
     const handleChange = (e) => {
-        if(e.target.name === coin){
+        console.log(e.target.name, e.target.value)
+        if(e.target.name === "coin"){
             setCoin(e.target.value)
         }else{
             setCoinT(e.target.value)
@@ -54,7 +55,7 @@ export default function Menu({change}){
                 </div>
                 <div className="quantity-coin">
                     <div className="coin-counter">
-                        <p>Cantidad total en monedas de ${coin}</p>
+                        <p>Cantidad total en monedas de ${coinT}</p>
                         <p className="contador">${countTotal}</p>
                     </div>
                     <span>Moneda:</span>
